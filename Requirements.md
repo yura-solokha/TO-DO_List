@@ -58,5 +58,7 @@ TO-DO List - це Web застосунок, орієнтований на пол
 - База даних PostreSQL.
 - Шифрування паролів зареєстрованих користувачів.
 ## Usecase діаграма для користувача
+<img width="850" alt="Знімок екрана 2023-03-04 о 17 19 59" src="https://user-images.githubusercontent.com/92300715/222914463-e1377b29-6453-4335-87de-426805032e13.png">
 
 ## Usecase діаграма для гостя
+<img width="850" alt="Знімок екрана 2023-03-04 о 17 20 53" src="https://user-images.githubusercontent.com/92300715/222914474-f0980348-68db-4544-b8dd-55c6aeef9f6b.png">
