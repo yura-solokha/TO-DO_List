@@ -48,4 +48,6 @@ TO-DO List - це web застосунок, орієнтований на пол
 
 ## ER-діаграма (діаграма сутностей)
 ![ER_Diagram](https://user-images.githubusercontent.com/72044955/224844926-c00ef501-eeef-4764-aa0e-23e83ba4fdff.png)
+## Сторінка авторизациї
+![image](https://user-images.githubusercontent.com/72785361/224847100-da8fbb1c-37d4-480f-8564-dceca6d788a9.png)
 
