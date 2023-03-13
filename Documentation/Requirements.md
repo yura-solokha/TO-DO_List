@@ -48,6 +48,20 @@ TO-DO List - це web застосунок, орієнтований на пол
 
 ## ER-діаграма (діаграма сутностей)
 ![ER_Diagram](https://user-images.githubusercontent.com/72044955/224844926-c00ef501-eeef-4764-aa0e-23e83ba4fdff.png)
+
+## Мокап проєкту:https://www.figma.com/file/y6LWTWWuKbyz0sPM7DrL6X/Untitled?node-id=0%3A1&t=EqFhKXmqQ9TnvPIG-1
+
 ## Сторінка авторизациї
 ![image](https://user-images.githubusercontent.com/72785361/224847100-da8fbb1c-37d4-480f-8564-dceca6d788a9.png)
+## Сторінка реєстрації
+![image](https://user-images.githubusercontent.com/72785361/224847191-21a67091-88ea-4e6a-8f63-2ac697e5795b.png)
+## Сторінка створення нового завдання 
+![image](https://user-images.githubusercontent.com/72785361/224847307-a8bd7748-17e8-4552-a88e-a0756e00a3c6.png)
+## Поп-ап меню налаштування завдання
+![image](https://user-images.githubusercontent.com/72785361/224847428-b395f97b-f3dd-41ae-8bff-0bf5d85bd0a1.png)
+## Сторінка з завданнями
+![image](https://user-images.githubusercontent.com/72785361/224847529-af82946f-6e09-4907-be43-3a62881402eb.png)
+## Сторінка з описом завдання та підзавданнями
+![image](https://user-images.githubusercontent.com/72785361/224847641-da36d13d-6675-4eb3-8fd9-58d05df4cefd.png)
+
 
