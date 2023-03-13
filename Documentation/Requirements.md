@@ -52,16 +52,17 @@ TO-DO List - це web застосунок, орієнтований на пол
 ## Мокап проєкту:https://www.figma.com/file/y6LWTWWuKbyz0sPM7DrL6X/Untitled?node-id=0%3A1&t=EqFhKXmqQ9TnvPIG-1
 
 ## Сторінка авторизациї
-![image](https://user-images.githubusercontent.com/72785361/224847100-da8fbb1c-37d4-480f-8564-dceca6d788a9.png)
+![image](https://user-images.githubusercontent.com/72785361/224847941-6456b4ad-4024-4d85-87ee-d308deb1ab9f.png)
 ## Сторінка реєстрації
-![image](https://user-images.githubusercontent.com/72785361/224847191-21a67091-88ea-4e6a-8f63-2ac697e5795b.png)
+![image](https://user-images.githubusercontent.com/72785361/224847980-f0c639a1-6965-41d2-a422-0cec3c5a7342.png)
 ## Сторінка створення нового завдання 
-![image](https://user-images.githubusercontent.com/72785361/224847307-a8bd7748-17e8-4552-a88e-a0756e00a3c6.png)
+![image](https://user-images.githubusercontent.com/72785361/224848038-ca92e5e7-774d-47c2-9756-f1a79a3bdfb1.png)
 ## Поп-ап меню налаштування завдання
-![image](https://user-images.githubusercontent.com/72785361/224847428-b395f97b-f3dd-41ae-8bff-0bf5d85bd0a1.png)
+![image](https://user-images.githubusercontent.com/72785361/224848009-6486f832-c44d-4983-ae18-bbfcb7e93757.png)
 ## Сторінка з завданнями
-![image](https://user-images.githubusercontent.com/72785361/224847529-af82946f-6e09-4907-be43-3a62881402eb.png)
+![image](https://user-images.githubusercontent.com/72785361/224848067-e5005982-67d6-4fba-865c-40b49a398fcc.png)
 ## Сторінка з описом завдання та підзавданнями
-![image](https://user-images.githubusercontent.com/72785361/224847641-da36d13d-6675-4eb3-8fd9-58d05df4cefd.png)
+![image](https://user-images.githubusercontent.com/72785361/224848101-a41a62c2-4955-4e4b-812f-6d75e84f7559.png)
+
 
 
