@@ -47,7 +47,7 @@ TO-DO List - це web застосунок, орієнтований на пол
 ![sequence_diagram](https://user-images.githubusercontent.com/72044955/224844715-4bc04e21-4169-423e-90ee-721fe2356d4f.png)
 
 ## ER-діаграма (діаграма сутностей)
-![ER_Diagram](https://user-images.githubusercontent.com/72044955/224844926-c00ef501-eeef-4764-aa0e-23e83ba4fdff.png)
+![ER_Diagram](https://user-images.githubusercontent.com/92300715/224922004-de17d0ac-afd0-4f66-810b-66204d040f9b.png)
 
 ## Мокап проєкту:https://www.figma.com/file/y6LWTWWuKbyz0sPM7DrL6X/Untitled?node-id=0%3A1&t=EqFhKXmqQ9TnvPIG-1
 
