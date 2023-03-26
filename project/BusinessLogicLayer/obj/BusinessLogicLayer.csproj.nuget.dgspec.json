@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {}
+    "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+    "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
         "projectName": "BusinessLogicLayer",
-        "projectPath": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
-        "packagesPath": "C:\\Users\\easyg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\BusinessLogicLayer\\obj\\",
+        "projectPath": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "packagesPath": "C:\\Users\\yuraa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\BusinessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\easyg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yuraa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -71,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23122.5\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\easyg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\easyg\\OneDrive\\Рабочий стол\\project\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\yuraa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yuraa\\Desktop\\WEB_To_Do_List\\project\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\easyg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yuraa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,6 +127,10 @@
               "target": "Package",
               "version": "[7.0.3, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -150,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23122.5\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
