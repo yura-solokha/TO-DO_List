@@ -5,6 +5,7 @@ using DataAccessLayer.Model;
 using DataAccessLayer.Repository;
 using DataAccessLayer.Repository.Impl;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Task = DataAccessLayer.Model.Task;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,13 @@ static IHostBuilder CreateHostBuilder(string[] args)=>
 
 
 // Add services to the container.
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

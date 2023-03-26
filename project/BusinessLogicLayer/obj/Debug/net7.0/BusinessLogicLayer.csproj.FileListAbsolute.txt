@@ -73,3 +73,18 @@ C:\Users\easyg\OneDrive\Рабочий стол\project\BusinessLogicLayer\obj\D
 C:\Users\easyg\OneDrive\Рабочий стол\project\BusinessLogicLayer\obj\Debug\net7.0\refint\BusinessLogicLayer.dll
 C:\Users\easyg\OneDrive\Рабочий стол\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.pdb
 C:\Users\easyg\OneDrive\Рабочий стол\project\BusinessLogicLayer\obj\Debug\net7.0\ref\BusinessLogicLayer.dll
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\bin\Debug\net7.0\BusinessLogicLayer.deps.json
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\bin\Debug\net7.0\BusinessLogicLayer.dll
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\bin\Debug\net7.0\BusinessLogicLayer.pdb
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.AssemblyInfo.cs
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.dll
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\refint\BusinessLogicLayer.dll
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.pdb
+C:\Users\yuraa\Desktop\WEB_To_Do_List\project\BusinessLogicLayer\obj\Debug\net7.0\ref\BusinessLogicLayer.dll
