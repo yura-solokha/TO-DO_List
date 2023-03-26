@@ -1,0 +1,60 @@
+C:\Users\38073\source\repos\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.deps.json
+C:\Users\38073\source\repos\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\source\repos\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\refint\DataAccessLayer.dll
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\source\repos\DataAccessLayer\obj\Debug\net7.0\ref\DataAccessLayer.dll
+C:\Users\38073\source\repos\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.deps.json
+C:\Users\38073\source\repos\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\source\repos\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\refint\DataAccessLayer.dll
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\source\repos\project\DataAccessLayer\obj\Debug\net7.0\ref\DataAccessLayer.dll
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.deps.json
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.dll
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\refint\DataAccessLayer.dll
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\illia.pavlov\Desktop\project\DataAccessLayer\obj\Debug\net7.0\ref\DataAccessLayer.dll
+C:\Users\38073\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.deps.json
+C:\Users\38073\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\Desktop\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.dll
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\refint\DataAccessLayer.dll
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\38073\Desktop\project\DataAccessLayer\obj\Debug\net7.0\ref\DataAccessLayer.dll
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.deps.json
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.dll
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\refint\DataAccessLayer.dll
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\easyg\OneDrive\Рабочий стол\project\DataAccessLayer\obj\Debug\net7.0\ref\DataAccessLayer.dll
