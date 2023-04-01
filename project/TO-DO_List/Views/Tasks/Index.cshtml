@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TO_DO_List.Models.Tasks.TaskViewModel>
+
+<body class="task-body">
+@if (!Model.Any())
+{
+    <p>Ще немає завдань.</p>
+}
+else
+{
+    @foreach (var task in Model)
+    {
+        @if (task.ParentId == null)
+        {
+            <div class="task-container">
+                <div class="task-rectangle">
+                    <div class="task-header">
+                        <h3 class="task-name">@task.Name</h3>
+                        <p class="task-deadline">@task.Deadline.ToString("dd.MM.yyyy")</p>
+                    </div>
+                    <div class="task-body">
+                        <p class="task-description">Опис: @task.Description</p>
+                    </div>
+                    <div class="task-buttons">
+                        <form asp-controller="Tasks" asp-action="CreateSubTask" method="get">
+                            <input type="hidden" name="parentId" value="@task.Id"/>
+                            <button class="add-subtask-button">+</button>
+                        </form>
+                        @if (task.Subtasks != null)
+                        {
+                            <button class="show-subtasks-button">▶</button>
+                        }
+                    </div>
+                </div>
+                @if (task.Subtasks != null && task.Subtasks.Any())
+                {
+                    <div class="subtasks-container">
+                        @foreach (var subtask in task.Subtasks)
+                        {
+                            <div class="subtask-container">
+                                <div class="subtask-rectangle">
+                                    <div class="subtask-header">
+                                        <h4 class="subtask-name">@subtask.Name</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    }
+}
+<form asp-controller="Tasks" asp-action="CreateTask" method="get">
+    <button type="submit" class="btn btn-dark">Створити завдання</button>
+</form>
+
+
+<script>
+        // Find all "show-subtasks-button" elements and add a click event listener to each one
+        const showSubtasksButtons = document.querySelectorAll(".show-subtasks-button");
+        for (let i = 0; i < showSubtasksButtons.length; i++) {
+            showSubtasksButtons[i].addEventListener("click", function() {
+                // Find the nearest parent element with a "subtasks-container" class
+                const subtasksContainer = this.closest(".task-container").querySelector(".subtasks-container");
+                // Toggle the display of the subtasks container
+                subtasksContainer.style.display = (subtasksContainer.style.display === "none") ? "block" : "none";
+            });
+        }
+    </script>
+</body>

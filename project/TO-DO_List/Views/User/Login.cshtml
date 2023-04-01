@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+@model LoginUserViewModel
+
+<h2>Вхід</h2>
+
+<html>
+<body>
+    <form asp-controller="User" asp-action="Login" method="post">
+        <div class="login_box">
+            <div>
+                <label class="username" asp-for="Login">Ім'я користувача:</label>
+            </div>
+            <div>
+                <input class="login_input" asp-for="Login" placeholder="Введіть ваше ім'я..." />
+                <span asp-validation-for="Login"></span>
+            </div>
+        </div>
+        <div class="password_box">
+            <div>
+                <label class="password" asp-for="Password">Пароль:</label>
+            </div>
+            <div>
+                <input class="password_input" asp-for="Password" placeholder="Введіть ваш пароль..." />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+        <div class="control_buttons">
+            <button class="login_button" type="submit">Увійти в систему</button>
+            <button class="forgot_password_button" type="submit">Відновити пароль</button>
+        </div>
+    </form>
+    <form asp-controller="User" asp-action="Register" method="get">
+        <button class="registration_password_button" type="submit">Зареєструватись</button>
+    </form>
+</body>
+</html>

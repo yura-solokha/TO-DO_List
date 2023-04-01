@@ -1,0 +1,34 @@
+﻿@model TO_DO_List.Models.Tasks.TaskCategoryViewModel
+
+<body class="task-body">
+<form asp-controller="Tasks" asp-action="CreateTask" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Task.Name">Назва</label>
+        <input asp-for="Task.Name" class="form-control" required/>
+        <span asp-validation-for="Task.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Task.Priority">Пріоритетність</label>
+        <input asp-for="Task.Priority" class="form-control" required/>
+        <span asp-validation-for="Task.Priority" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Task.Description">Опис</label>
+        <input asp-for="Task.Description" class="form-control" required/>
+        <span asp-validation-for="Task.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Task.Deadline">Термін</label>
+        <input asp-for="Task.Deadline" class="form-control" type="date" required/>
+        <span asp-validation-for="Task.Deadline" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Task.Category">Категорія</label>
+        <select asp-for="Task.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control" required></select>
+        <span asp-validation-for="Task.CategoryId" class="text-danger"></span>
+    </div>
+    <input type="hidden" name="userId" value="1"/>
+    <button type="submit" class="btn btn-dark">Створити</button>
+</form>
+</body>

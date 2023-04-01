@@ -1,0 +1,29 @@
+@model TO_DO_List.Models.Tasks.SubTaskViewModel
+
+<body class="task-body">
+<form asp-controller="Tasks" asp-action="CreateSubTask" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Name">Назва</label>
+        <input asp-for="Name" class="form-control" required/>
+        <input type="hidden" asp-for="ParentId" value="@Model.ParentId"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Priority">Пріоритетність</label>
+        <input asp-for="Priority" class="form-control" required/>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Опис</label>
+        <input asp-for="Description" class="form-control" required/>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Deadline">Термін</label>
+        <input asp-for="Deadline" class="form-control" type="date" required/>
+        <span asp-validation-for="Deadline" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-dark">Створити</button>
+</form>
+</body>
