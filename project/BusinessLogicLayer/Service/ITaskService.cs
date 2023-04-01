@@ -1,16 +1,17 @@
-﻿using DataAccessLayer.Model;
+﻿using System.Collections.Generic;
 using Task = DataAccessLayer.Model.Task;
 
-namespace BusinessLogicLayer.Service
+namespace BusinessLogicLayer.Service;
+
+public interface ITaskService
 {
-    public interface ITaskService
-    {
-         void Create(string name, int priority, Category category);
+    void Create(Task task);
 
-         List<Task> FindAll();
+    List<Task> FindAll();
 
-         Task FindById(int id);
+    Task FindById(int id);
 
-         void Delete(int id);
-    }
+    void Delete(int id);
+
+    List<Task> FindForUser(int userId);
 }

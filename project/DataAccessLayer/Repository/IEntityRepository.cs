@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DataAccessLayer.Model;
 
-namespace DataAccessLayer.Repository
+namespace DataAccessLayer.Repository;
+
+public interface IEntityRepository<T>
+    where T : EntityBase
 {
-    public interface IEntityRepository<T>
-        where T : EntityBase
-    {
-        T GetById(int id);
+    T GetById(int id);
 
-        void Create(T entity);
+    void Create(T entity);
 
-        void Delete(int id);
+    void Delete(int id);
 
-        IQueryable<T> FindAll();
-    }
+    IQueryable<T> FindAll();
 }

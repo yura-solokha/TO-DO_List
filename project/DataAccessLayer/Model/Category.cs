@@ -1,10 +1,10 @@
-﻿
-namespace DataAccessLayer.Model
-{
-    public partial class Category : EntityBase
-    {
-        public string Name { get; set; } = null!;
+﻿using System.Collections.Generic;
 
-        public virtual ICollection<Task> Tasks { get; } = new List<Task>();
-    }
+namespace DataAccessLayer.Model;
+
+public class Category : EntityBase
+{
+    public string Name { get; set; } = string.Empty;
+
+    public virtual ICollection<Task> Tasks { get; } = new List<Task>();
 }

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DataAccessLayer.Model;
 
-namespace DataAccessLayer.Model
+public abstract class EntityBase
 {
-    public abstract class EntityBase
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

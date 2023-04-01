@@ -1,10 +1,16 @@
-﻿namespace DataAccessLayer.Model
+﻿using System.Collections.Generic;
+
+namespace DataAccessLayer.Model;
+
+public class User : EntityBase
 {
-    public partial class User : EntityBase
-    {
-        public string LastName { get; set; } = null!;
-        public string FirstName { get; set; } = null!;
-        public string Login { get; set; } = null!;
-        public string Password { get; set; } = null!;
-    }
+    public string LastName { get; set; } = string.Empty;
+
+    public string FirstName { get; set; } = string.Empty;
+
+    public string Login { get; set; } = string.Empty;
+
+    public string Password { get; set; } = string.Empty;
+
+    public virtual ICollection<Task> Tasks { get; } = new List<Task>();
 }

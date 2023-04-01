@@ -1,17 +1,19 @@
-﻿using DataAccessLayer.Model;
+﻿using System.Collections.Generic;
+using DataAccessLayer.Model;
 
-namespace BusinessLogicLayer.Service
+namespace BusinessLogicLayer.Service;
+
+public interface IUserService
 {
-    public interface IUserService
-    {
-        List<User> FindAll();
+    List<User> FindAll();
 
-        User FindById(int id);
+    User FindById(int id);
 
-        void RegisterUser(string firstName, string lastName, string login, string password);
+    User FindByLogin(string login);
 
-        bool LoginUser(string login, string password);
+    void RegisterUser(User user);
 
-        void Delete(int id);
-    }
+    bool LoginUser(string login, string password);
+
+    void Delete(int id);
 }
