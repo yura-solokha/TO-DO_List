@@ -8,11 +8,14 @@
         <input asp-for="Task.Name" class="form-control" required/>
         <span asp-validation-for="Task.Name" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Task.Priority">Пріоритетність</label>
-        <input asp-for="Task.Priority" class="form-control" required/>
-        <span asp-validation-for="Task.Priority" class="text-danger"></span>
-    </div>
+   <div class="form-group">
+       <label asp-for="Task.Priority">Пріоритетність</label>
+       <select asp-for="Task.Priority" class="form-control" required>
+           <option value="0">Пріоритетне</option>
+           <option value="1">Непріоритетне</option>
+       </select>
+       <span asp-validation-for="Task.Priority" class="text-danger"></span>
+   </div>
     <div class="form-group">
         <label asp-for="Task.Description">Опис</label>
         <input asp-for="Task.Description" class="form-control" required/>

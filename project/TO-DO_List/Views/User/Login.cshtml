@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-@model LoginUserViewModel
+@model TO_DO_List.Models.User.LoginUserViewModel
 
 <h2>Вхід</h2>
 
@@ -11,8 +11,8 @@
                 <label class="username" asp-for="Login">Ім'я користувача:</label>
             </div>
             <div>
-                <input class="login_input" asp-for="Login" placeholder="Введіть ваше ім'я..." />
-                <span asp-validation-for="Login"></span>
+                <input class="login_input" asp-for="Login" placeholder="Введіть ваше ім'я..." required/>
+                <span asp-validation-for="Login" class="text-danger"></span>
             </div>
         </div>
         <div class="password_box">
@@ -20,8 +20,8 @@
                 <label class="password" asp-for="Password">Пароль:</label>
             </div>
             <div>
-                <input class="password_input" asp-for="Password" placeholder="Введіть ваш пароль..." />
-                <span asp-validation-for="Password"></span>
+                <input class="password_input" asp-for="Password" placeholder="Введіть ваш пароль..." required/>
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
         </div>
             <button class="login_button" type="submit">Увійти в систему</button>

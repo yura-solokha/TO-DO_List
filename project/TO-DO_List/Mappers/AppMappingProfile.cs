@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Model;
-using TO_DO_List.Models;
 using TO_DO_List.Models.Tasks;
+using TO_DO_List.Models.User;
 using Task = DataAccessLayer.Model.Task;
 
 namespace TO_DO_List.Mappers

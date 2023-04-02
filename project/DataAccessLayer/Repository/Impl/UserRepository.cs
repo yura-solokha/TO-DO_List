@@ -37,8 +37,8 @@ public class UserRepository : IEntityRepository<User>, IUserRepository
         return _context.Users.Find(id)!;
     }
 
-    public User GetByLogin(string login)
+    public User? GetByLogin(string login)
     {
-        return _context.Users.FirstOrDefault(b => b.Login == login)!;
+        return _context.Users.FirstOrDefault(b => b.Login == login);
     }
 }

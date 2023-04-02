@@ -4,6 +4,7 @@ using BusinessLogicLayer.Service;
 using DataAccessLayer.Model;
 using Microsoft.AspNetCore.Mvc;
 using TO_DO_List.Models;
+using TO_DO_List.Models.User;
 
 namespace TO_DO_List.Controllers
 {
@@ -57,14 +58,11 @@ namespace TO_DO_List.Controllers
                 return View(model);
             }
 
-            if (ModelState.IsValid)
-            {
-                var user = _mapper.Map<User>(model);
-                _userService.RegisterUser(user);
-                return RedirectToAction("Index", "Tasks", new { userId = 1 });
-            }
+            if (!ModelState.IsValid) return View(model);
+            var user = _mapper.Map<User>(model);
+            _userService.RegisterUser(user);
+            return RedirectToAction("Index", "Tasks", new { userId = 1 });
 
-            return View(model);
         }
         [HttpGet]
         public IActionResult ResetPassword()
