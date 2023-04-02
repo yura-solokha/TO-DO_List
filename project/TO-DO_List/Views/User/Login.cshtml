@@ -24,13 +24,17 @@
                 <span asp-validation-for="Password"></span>
             </div>
         </div>
-        <div class="control_buttons">
             <button class="login_button" type="submit">Увійти в систему</button>
-            <button class="forgot_password_button" type="submit">Відновити пароль</button>
-        </div>
+            </form>
+    <form asp-controller="User" asp-action="ResetPassword" method="get">
+        <button class="forgot_password_button" type="submit">Відновити пароль</button>
     </form>
     <form asp-controller="User" asp-action="Register" method="get">
         <button class="registration_password_button" type="submit">Зареєструватись</button>
     </form>
+        
+    
+  
+    
 </body>
 </html>

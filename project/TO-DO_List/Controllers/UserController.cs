@@ -66,6 +66,31 @@ namespace TO_DO_List.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ResetPassword(RegisterViewModel model)
+        {
+            var userFromDb = _userService.FindByLogin(model.Login);
+            if (userFromDb != null)
+            {
+                ModelState.AddModelError("", "Користувач з таким логіном вже існує");
+                return View(model);
+            }
+
+            if (ModelState.IsValid)
+            {
+                var user = _mapper.Map<User>(model);
+                _userService.RegisterUser(user);
+                return RedirectToAction("Index", "Tasks", new { userId = 1 });
+            }
+
+            return View(model);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

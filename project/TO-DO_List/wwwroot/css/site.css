@@ -98,10 +98,13 @@ body {
 .forgot_password_button {
     background: LightCoral;
     border-radius: 30px;
-    margin-left: 37px;
+    margin-left: 205px;
     font-size: 20px;
     border-color: transparent;
     padding: 14px;
+    position: absolute;
+    width: fit-content;
+    margin-top: -61px;
 }
 
 .registration_password_button {
@@ -132,13 +135,16 @@ body {
 .forgot_password_button:hover {
     background: LightCoral;
     border-radius: 30px;
-    margin-left: 37px;
+    margin-left: 205px;
     font-size: 20px;
     padding: 14px;
     border-color: black;
     color: white;
     border-width: 3px;
     filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
+    position: absolute;
+    width: fit-content;
+    margin-top: -61px;
 }
 
 .registration_password_button:hover {
@@ -321,8 +327,9 @@ body {
     color: white;
 }
 
-.task-buttons button {
-    margin-right: 10px;
+.task-buttons{
+    display:table-row;
+
 }
 
 .add-subtask-button {
@@ -370,3 +377,73 @@ body {
 .subtask-name {
     margin: 0;
 }
+.reset_password_login_box {
+   background-color:ghostwhite;
+   max-width:500px;
+   padding:15px;
+   border-radius:30px;
+}
+.reset_password_login_title {
+    color: black;
+    font-size: 25px;
+}
+.reset_password_login_input{
+    border:0;
+    font-size:15px;
+    background-color:ghostwhite;
+}
+
+.reset_password_password_box {
+    background-color: ghostwhite;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 30px;
+    margin-top:15px;
+}
+.reset_password_password_title {
+    color: black;
+    font-size: 25px;
+}
+.reset_password_password_input {
+    border: 0;
+    font-size: 15px;
+    background-color: ghostwhite;
+}
+
+.confirm_reset_password_box {
+    background-color: ghostwhite;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+.confirm_reset_password_title {
+    color: black;
+    font-size: 25px;
+}
+.confirm_reset_password_input {
+    border: 0;
+    font-size: 15px;
+    background-color: ghostwhite;
+}
+.confirm_button {
+    padding: 14px;
+    border-radius: 30px;
+    background-color: lightgreen;
+    font-size: 20px;
+    border-color: transparent;
+    margin-top: 15px;
+    margin-left: 86px;
+}
+    .confirm_button:hover {
+        padding: 14px;
+        border-radius: 30px;
+        background-color: lightgreen;
+        font-size: 20px;
+        border-color: black;
+        border-width: 3px;
+        color: white;
+        filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
+        margin-top: 15px;
+        margin-left: 86px;
+    }

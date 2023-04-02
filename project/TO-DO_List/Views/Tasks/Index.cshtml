@@ -16,20 +16,22 @@ else
                     <div class="task-header">
                         <h3 class="task-name">@task.Name</h3>
                         <p class="task-deadline">@task.Deadline.ToString("dd.MM.yyyy")</p>
+                            <div class="task-buttons">
+                                <form asp-controller="Tasks" asp-action="CreateSubTask" method="get">
+                                    <input type="hidden" name="parentId" value="@task.Id" />
+                                    <button class="add-subtask-button">+</button>
+                                </form>
+                                @if (task.Subtasks != null)
+                                {
+                                    <button class="show-subtasks-button">▶</button>
+                                }
+                            </div>
+                            <input class="is_done_checkbox" type="checkbox" id="isTaskDone" checked>
                     </div>
                     <div class="task-body">
                         <p class="task-description">Опис: @task.Description</p>
                     </div>
-                    <div class="task-buttons">
-                        <form asp-controller="Tasks" asp-action="CreateSubTask" method="get">
-                            <input type="hidden" name="parentId" value="@task.Id"/>
-                            <button class="add-subtask-button">+</button>
-                        </form>
-                        @if (task.Subtasks != null)
-                        {
-                            <button class="show-subtasks-button">▶</button>
-                        }
-                    </div>
+                    
                 </div>
                 @if (task.Subtasks != null && task.Subtasks.Any())
                 {
