@@ -9,7 +9,7 @@ public interface IUserService
 
     User FindById(int id);
 
-    User FindByLogin(string login);
+    User? FindByLogin(string login);
 
     void RegisterUser(User user);
 

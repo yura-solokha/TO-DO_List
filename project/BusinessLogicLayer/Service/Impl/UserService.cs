@@ -44,7 +44,7 @@ public class UserService : IUserService
         _userRepository.Delete(id);
     }
 
-    public User FindByLogin(string login)
+    public User? FindByLogin(string login)
     {
         return _iUserRepository.GetByLogin(login);
     }
