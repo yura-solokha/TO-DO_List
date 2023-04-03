@@ -7,6 +7,8 @@ public interface ITaskService
 {
     void Create(Task task);
 
+    void Update(Task task);
+
     List<Task> FindAll();
 
     Task FindById(int id);
@@ -14,4 +16,6 @@ public interface ITaskService
     void Delete(int id);
 
     List<Task> FindForUser(int userId);
+
+    List<Task> FilterTasks(List<Task> tasks, int? categoryId, bool? isDone, int? priority);
 }

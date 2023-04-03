@@ -1,7 +1,5 @@
-﻿using System.Reflection.Metadata;
-using AutoMapper;
+﻿using AutoMapper;
 using BusinessLogicLayer.Service;
-using DataAccessLayer.Model;
 using Microsoft.AspNetCore.Mvc;
 using TO_DO_List.Models.Tasks;
 using Task = DataAccessLayer.Model.Task;
@@ -12,20 +10,28 @@ namespace TO_DO_List.Controllers
     {
         private readonly ITaskService _taskService;
         private readonly ICategoryService _categoryService;
+        private readonly ILogger<TasksController> _logger;
         private readonly IMapper _mapper;
 
-        public TasksController(IMapper mapper, ITaskService taskService, ICategoryService categoryService)
+        public TasksController(IMapper mapper, ITaskService taskService, ICategoryService categoryService,
+            ILogger<TasksController> logger)
         {
             _mapper = mapper;
             _taskService = taskService;
             _categoryService = categoryService;
+            _logger = logger;
         }
 
         [HttpGet("Tasks/Index/{userId:int}")]
-        public IActionResult Index(int userId)
+        public IActionResult Index(int userId, int? categoryId, bool? isDone, int? priority)
         {
+            _logger.LogInformation("View all tasks for user with id={}.", userId);
             var tasks = _taskService.FindForUser(userId);
+            tasks = _taskService.FilterTasks(tasks, categoryId, isDone, priority);
+
             var taskViewModels = _mapper.Map<IEnumerable<TaskViewModel>>(tasks);
+            var categories = _categoryService.FindAll();
+            ViewBag.Categories = categories;
             return View(taskViewModels);
         }
 
@@ -43,35 +49,51 @@ namespace TO_DO_List.Controllers
                 }).ToList()
             };
 
+            _logger.LogInformation("View create task form.");
             return View(model);
         }
 
         [HttpPost]
         public IActionResult CreateTask(TaskCategoryViewModel model)
         {
+            _logger.LogInformation("Creating task");
             var task = _mapper.Map<Task>(model.Task);
             _taskService.Create(task);
+            _logger.LogInformation("Task successfully created.");
             return RedirectToAction("Index", "Tasks", new { userId = 1 });
         }
 
         [HttpGet]
         public IActionResult CreateSubTask(int parentId)
         {
-            Console.WriteLine(parentId);
             var model = new SubTaskViewModel()
             {
                 ParentId = parentId
             };
+            _logger.LogInformation("View create subtask form.");
             return View(model);
         }
 
         [HttpPost]
         public IActionResult CreateSubTask(SubTaskViewModel model)
         {
+            _logger.LogInformation("Creating subtask");
             var task = _mapper.Map<Task>(model);
             Console.WriteLine(task);
             _taskService.Create(task);
-            return RedirectToAction("Index", "Tasks",new { userId = 1 });
+            _logger.LogInformation("Subtask successfully created.");
+            return RedirectToAction("Index", "Tasks", new { userId = 1 });
+        }
+
+        [HttpPost]
+        public IActionResult MarkTask(int taskId, bool isDone)
+        {
+            _logger.LogInformation("Marking task");
+            var task = _taskService.FindById(taskId);
+            task.IsDone = isDone;
+            _taskService.Update(task);
+            _logger.LogInformation("Task was successfully marked.");
+            return RedirectToAction("Index", "Tasks", new { userId = 1 });
         }
     }
 }

@@ -5,6 +5,7 @@ using DataAccessLayer.Model;
 using DataAccessLayer.Repository;
 using DataAccessLayer.Repository.Impl;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using TO_DO_List.Mappers;
 using Task = DataAccessLayer.Model.Task;
 
@@ -26,12 +27,11 @@ builder.Services.AddDbContext<TodoListContext>(options =>
         .Replace("DBPassword", builder.Configuration["DBPassword"])
         .Replace(")", "")));
 
-
-static IHostBuilder CreateHostBuilder(string[] args)=>
-    Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
-    {
-        webBuilder.UseStartup<StartupBase>();
-    }).ConfigureLogging(builder => { builder.AddLog4Net("log4net.config"); });
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

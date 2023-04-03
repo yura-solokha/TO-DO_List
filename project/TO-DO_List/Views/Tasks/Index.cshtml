@@ -1,6 +1,44 @@
 ﻿@model IEnumerable<TO_DO_List.Models.Tasks.TaskViewModel>
 
+<form asp-controller="Tasks" asp-action="Index" method="get" class="form-inline">
+    <div class="form-row align-items-center filter_select">
+        <div class="col-sm-3 my-1">
+            <label for="category" class="sr-only">Категорія:</label>
+            <select name="categoryId" id="category" class="form-control">
+                <option value="">Всі</option>
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-sm-3 my-1">
+            <label for="isDone" class="sr-only">Виконано:</label>
+            <select name="isDone" id="isDone" class="form-control">
+                <option value="">Всі</option>
+                <option value="true">Так</option>
+                <option value="false">Ні</option>
+            </select>
+        </div>
+
+        <div class="col-sm-3 my-1">
+            <label for="priority" class="mr-2">Пріоритет:</label>
+            <select name="priority" id="priority" class="form-control">
+                <option value="">Всі</option>
+                <option value="1">Низький</option>
+                <option value="0">Високий</option>
+            </select>
+        </div>
+
+        <div class="col-auto my-1">
+            <input type="hidden" name="userId" value="1"/>
+            <button type="submit" class="btn btn-secondary">Фільтрувати</button>
+        </div>
+    </div>
+</form>
 <body class="task-body">
+
 @if (!Model.Any())
 {
     <p>Ще немає завдань.</p>
@@ -16,22 +54,26 @@ else
                     <div class="task-header">
                         <h3 class="task-name">@task.Name</h3>
                         <p class="task-deadline">@task.Deadline.ToString("dd.MM.yyyy")</p>
-                            <div class="task-buttons">
-                                <form asp-controller="Tasks" asp-action="CreateSubTask" method="get">
-                                    <input type="hidden" name="parentId" value="@task.Id" />
-                                    <button class="add-subtask-button">+</button>
-                                </form>
-                                @if (task.Subtasks != null)
-                                {
-                                    <button class="show-subtasks-button">▶</button>
-                                }
-                            </div>
-                            <input class="is_done_checkbox" type="checkbox" id="isTaskDone" checked>
+                        <div class="task-buttons">
+                            <form asp-controller="Tasks" asp-action="CreateSubTask" method="get">
+                                <input type="hidden" name="parentId" value="@task.Id"/>
+                                <button class="add-subtask-button">+</button>
+                            </form>
+                            @if (task.Subtasks != null && task.Subtasks.Any())
+                            {
+                                <button class="show-subtasks-button">▶</button>
+                            }
+                        </div>
+                        <form asp-controller="Tasks" asp-action="MarkTask" method="post">
+                            <input type="hidden" name="taskId" value="@task.Id" />
+                            <input type="checkbox" name="isDone" class="is_done_checkbox" id="isTaskDone" checked="@task.IsDone" value="true" onchange="this.form.submit()" />
+                            <input type="hidden" name="isDone" value="false" />
+                        </form>
+
                     </div>
                     <div class="task-body">
                         <p class="task-description">Опис: @task.Description</p>
                     </div>
-                    
                 </div>
                 @if (task.Subtasks != null && task.Subtasks.Any())
                 {

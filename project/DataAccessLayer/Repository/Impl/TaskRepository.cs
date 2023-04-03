@@ -41,4 +41,10 @@ public class TaskRepository : IEntityRepository<Task>, ITaskRepository
     {
         return _context.Tasks.Where(t => t.UserId == userId);
     }
+
+    public void Update(Task task)
+    {
+        _context.Tasks.Update(task);
+        _context.SaveChanges();
+    }
 }

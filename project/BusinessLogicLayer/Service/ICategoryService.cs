@@ -9,5 +9,5 @@ public interface ICategoryService
 
     Category FindById(int id);
 
-    void Remove(int id);
+    void Delete(int id);
 }

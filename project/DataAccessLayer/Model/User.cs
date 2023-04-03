@@ -13,4 +13,9 @@ public class User : EntityBase
     public string Password { get; set; } = string.Empty;
 
     public virtual ICollection<Task> Tasks { get; } = new List<Task>();
+    
+    public override string ToString()
+    {
+        return $"{nameof(LastName)}: {LastName}, {nameof(FirstName)}: {FirstName}, {nameof(Login)}: {Login}";
+    }
 }
