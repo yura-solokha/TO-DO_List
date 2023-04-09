@@ -1,37 +1,66 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - TO_DO_List</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TO_DO_List.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" id="site-css"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand mx-auto" asp-area="" asp-controller="Tasks" asp-action="Index">TO-DO List</a>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto todo" id="todo" asp-area="" asp-controller="Tasks" asp-action="Index">TO-DO List</a>
+            <button type="button" class="btn btn-toolbar" id="toggleCSS">Toggle Theme</button>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
 
-    <wrapper class="footer-wrapper">
-        <footer class="border-top footer bg-black text-white">
-            <div class="container">
-                &copy; 2023 - TO_DO_List
-            </div>
-        </footer>
-    </wrapper>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<wrapper class="footer-wrapper">
+    <footer class="border-top footer ">
+        <div class="container">
+            &copy; 2023 - TO_DO_List
+        </div>
+    </footer>
+</wrapper>
+
+<script>
+let savedTheme = localStorage.getItem("theme");
+    function toggleCss() {
+      let link = document.getElementById("site-css");
+      if (link.href.endsWith("site.css")) {
+        link.href = "/css/bear.css";
+        document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
+        localStorage.setItem("theme", "bear");
+        savedTheme = "bear";
+      } else {
+        link.href = "/css/site.css";
+        document.getElementById("todo").innerText = "TO-DO List";
+        localStorage.setItem("theme", "default");
+        savedTheme = "default";
+      }
+    }
+    document.getElementById("toggleCSS").addEventListener("click", toggleCss);
+    if (savedTheme === "bear") {
+        document.getElementById("site-css").href = "/css/bear.css";
+        document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
+    } else {
+        document.getElementById("site-css").href = "/css/site.css";
+    }
+</script>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

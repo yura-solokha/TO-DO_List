@@ -12,22 +12,19 @@ html {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-.header {
-    background: black;
-    display: flex;
+header {
+    background-color: #443C3C;
+    color: #F9F9F9;
 }
 
 .todo, .todo:hover, .todo:active, .todo:link, .todo:visited {
-    color: white;
-}
-
-nav {
-    background: black;
+    color: #F9F9F9;
 }
 
 body {
     margin-bottom: 60px;
     background: lightgrey;
+    color: #1A120B;
 }
 
 .username {
@@ -59,7 +56,7 @@ body {
 }
 
 .login_input::placeholder {
-    color: black;
+    color: #1A120B;
     opacity: 0.5;
 }
 
@@ -89,13 +86,13 @@ body {
 }
 
 .password_input::placeholder {
-    color: black;
+    color: #1A120B;
     opacity: 0.5;
 }
 
 .login_button {
     margin-top: 83px;
-    background: lightgreen;
+    background: #D5B4B4;
     border-radius: 30px;
     margin-left: -5px;
     font-size: 20px;
@@ -104,7 +101,7 @@ body {
 }
 
 .forgot_password_button {
-    background: LightCoral;
+    background: #F5EBEB;
     border-radius: 30px;
     margin-left: 205px;
     font-size: 20px;
@@ -116,8 +113,8 @@ body {
 }
 
 .registration_password_button {
-    background: deepskyblue;
-    color: black;
+    background: #E4D0D0;
+    color: #1A120B;
     font-size: 20px;
     border-radius: 30px;
     padding: 14px;
@@ -127,7 +124,7 @@ body {
 }
 
 .login_button:hover {
-    background: lightgreen;
+    background: #D5B4B4;
     margin-top: 83px;
     border-radius: 30px;
     margin-left: -5px;
@@ -141,7 +138,7 @@ body {
 }
 
 .forgot_password_button:hover {
-    background: LightCoral;
+    background: #E4D0D0;
     border-radius: 30px;
     margin-left: 205px;
     font-size: 20px;
@@ -156,15 +153,14 @@ body {
 }
 
 .registration_password_button:hover {
-    background: deepskyblue;
-    color: black;
+    background: #E4D0D0;
+    color: #1A120B;
     font-size: 20px;
     border-radius: 30px;
     padding: 14px;
     margin-top: 13px;
     margin-left: 98px;
     border-color: black;
-    color: white;
     border-width: 3px;
     filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
 }
@@ -269,12 +265,12 @@ body {
 .confirm_password_form-control {
     padding-top: 4px;
     border-color: transparent;
-    color: grey;
+    color: #D5B4B4;
     font-size: 22px;
 }
 
 .page_register_button {
-    background-color: lightgreen;
+    background-color: #E4D0D0;
     border-radius: 30px;
     font-size: 20px;
     border-color: transparent;
@@ -287,8 +283,8 @@ body {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: black;
-    color: white;
+    background-color: #443C3C;
+    color: #F9F9F9;
     padding: 1rem;
 }
 
@@ -299,7 +295,8 @@ body {
 
 .task-body {
     margin-bottom: 60px;
-    background: white;
+    background: #f8f9fa;
+    color: #1A120B;
 }
 
 .task-container {
@@ -308,10 +305,10 @@ body {
 
 .task-rectangle {
     border-radius: 30px;
-    border: 1px solid black;
+    border: 1px solid #9D8F8F;
     padding: 10px;
-    background: black;
-    color: white;
+    background: #9D8F8F;
+    color: #1A120B;
     height: 140px;
 }
 
@@ -332,8 +329,8 @@ body {
 
 .task-description {
     margin: 10px 0;
-    background: black;
-    color: white;
+    background: #9D8F8F;
+    color: #1A120B;
 }
 
 .task-buttons {
@@ -344,8 +341,8 @@ body {
 .add-subtask-button {
     font-size: 1.2em;
     font-weight: bold;
-    background-color: black;
-    color: white;
+    background-color: #9D8F8F;
+    color: #625757;
     border: none;
     cursor: pointer;
 }
@@ -353,8 +350,8 @@ body {
 .show-subtasks-button {
     font-size: 1.2em;
     font-weight: bold;
-    background-color: black;
-    color: white;
+    background-color: #9D8F8F;
+    color: #4A403A;
     border: none;
     cursor: pointer;
 }
@@ -371,10 +368,10 @@ body {
 
 .subtask-rectangle {
     border-radius: 30px;
-    border: 1px solid black;
+    border: 1px solid #9D8F8F;
     padding: 10px;
-    background: black;
-    color: white;
+    background: #9D8F8F;
+    color: #1A120B;
 }
 
 .subtask-header {
@@ -395,7 +392,7 @@ body {
 }
 
 .reset_password_login_title {
-    color: black;
+    color: #1A120B;
     font-size: 25px;
 }
 
@@ -414,7 +411,7 @@ body {
 }
 
 .reset_password_password_title {
-    color: black;
+    color: #1A120B;
     font-size: 25px;
 }
 
@@ -433,7 +430,7 @@ body {
 }
 
 .confirm_reset_password_title {
-    color: black;
+    color: #1A120B;
     font-size: 25px;
 }
 
@@ -446,7 +443,7 @@ body {
 .confirm_button {
     padding: 14px;
     border-radius: 30px;
-    background-color: lightgreen;
+    background-color: #D5B4B4;
     font-size: 20px;
     border-color: transparent;
     margin-top: 15px;
@@ -456,7 +453,7 @@ body {
 .confirm_button:hover {
     padding: 14px;
     border-radius: 30px;
-    background-color: lightgreen;
+    background-color: #E4D0D0;
     font-size: 20px;
     border-color: black;
     border-width: 3px;
@@ -469,4 +466,5 @@ body {
 .filter_select {
     display: flex;
     justify-content: space-between;
+    color: #867070;
 }
