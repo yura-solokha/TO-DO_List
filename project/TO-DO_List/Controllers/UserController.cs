@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using BusinessLogicLayer.Service;
+using BusinessLogicLayer.Service.Impl;
 using DataAccessLayer.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,13 +14,15 @@ namespace TO_DO_List.Controllers
         private readonly ILogger<UserController> _logger;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private IEmailService _emailService;
 
         public UserController(ILogger<UserController> logger,
-            UserManager<User> userManager, SignInManager<User> signInManager)
+            UserManager<User> userManager, SignInManager<User> signInManager, IEmailService emailService)
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailService = emailService;
         }
 
         [HttpGet]
@@ -38,24 +42,25 @@ namespace TO_DO_List.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName
             };
-            var result = await _userManager.CreateAsync(user, model.Password);
 
-            if (result.Succeeded)
-            {
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("User created a new account.");
-                return RedirectToAction("Index", "Tasks");
+            if(model.Password == model.ConfirmPassword) {
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation("User created a new account.");
+                    return RedirectToAction("Index", "Tasks");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                    _logger.LogInformation("Error creating user: " + error.Description);
+                }
             }
-
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-                _logger.LogInformation("Error creating user: " + error.Description);
-            }
-
+            
             return View(model);
         }
-
 
         [HttpGet]
         public IActionResult Login()
@@ -99,21 +104,24 @@ namespace TO_DO_List.Controllers
             }
 
             var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var result = await _userManager.ResetPasswordAsync(user, resetToken, model.Password);
-
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("User updated an account with new password.");
-                return RedirectToAction("Login", "User");
-            }
-
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-                _logger.LogInformation("Error updating password: " + error.Description);
-            }
+ 
+            await _emailService.SendEmail(user, resetToken, model.Password);
 
             return View(model);
+        }
+
+        [HttpGet("reset-password")]
+        public async Task<IActionResult> CompleteResetPassword()
+        {
+            string uid = HttpContext.Request.Query["uid"];
+            string resetToken = HttpContext.Request.Query["token"].ToString().Replace(' ', '+');
+            string newPassword = HttpContext.Request.Query["newPassword"];
+
+            var user = await _userManager.FindByIdAsync(uid);
+            await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
+            
+            _logger.LogInformation("User updated an account with new password.");
+            return RedirectToAction("Login", "User");
         }
 
         [HttpPost]

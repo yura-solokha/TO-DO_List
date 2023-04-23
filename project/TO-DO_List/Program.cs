@@ -14,10 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
 builder.Services.AddScoped<IEntityRepository<Task>, TaskRepository>();
 builder.Services.AddScoped<IEntityRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDbContext<TodoListContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")!
@@ -47,7 +47,6 @@ builder.Logging.AddSerilog(logger);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
-
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/User/Login";
