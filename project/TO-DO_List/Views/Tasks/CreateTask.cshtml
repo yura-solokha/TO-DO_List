@@ -31,7 +31,6 @@
         <select asp-for="Task.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control" required></select>
         <span asp-validation-for="Task.CategoryId" class="text-danger"></span>
     </div>
-    <input type="hidden" name="userId" value="1"/>
     <button type="submit" class="btn btn-dark">Створити</button>
 </form>
 </body>

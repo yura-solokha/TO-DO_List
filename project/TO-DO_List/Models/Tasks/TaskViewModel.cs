@@ -28,7 +28,7 @@ namespace TO_DO_List.Models.Tasks
         public Category Category { get; set; }
         public int CategoryId { get; set; }
 
-        public int UserId { get; set; } = 1;
+        public int UserId { get; set; }
 
         public int? ParentId { get; set; }
 

@@ -16,5 +16,7 @@ namespace TO_DO_List.Models.User
             ErrorMessage = "Пароль має містити мінімум 3 символи.")]
         [StringLength(32, MinimumLength = 3)]
         public string Password { get; set; } = string.Empty;
+
+        public bool RememberMe { get; set; } = false;
     }
 }

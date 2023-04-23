@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DataAccessLayer.Model;
+﻿namespace DataAccessLayer.Model;
 
 public class Task : EntityBase
 {
+    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
 
     public bool IsDone { get; set; }

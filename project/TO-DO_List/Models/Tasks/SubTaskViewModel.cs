@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using DataAccessLayer.Model;
 
 namespace TO_DO_List.Models.Tasks;
 
@@ -23,6 +22,6 @@ public class SubTaskViewModel
     [DataType(DataType.Date)]
     public DateOnly Deadline { get; set; }
 
-    public int UserId { get; set; } = 1;
+    public int UserId { get; set; }
     public int ParentId { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DataAccessLayer.Model;
 
-public abstract class EntityBase
+public interface EntityBase
 {
     public int Id { get; set; }
 }
