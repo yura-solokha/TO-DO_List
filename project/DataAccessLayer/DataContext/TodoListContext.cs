@@ -19,7 +19,7 @@ namespace DataAccessLayer.DataContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=111;database=todo_list;");
+                optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=1234;database=todo_list;");
             }
         }
 
