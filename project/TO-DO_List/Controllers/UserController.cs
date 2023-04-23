@@ -38,19 +38,23 @@ namespace TO_DO_List.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName
             };
-            var result = await _userManager.CreateAsync(user, model.Password);
 
-            if (result.Succeeded)
+            if (model.Password == model.ConfirmPassword)
             {
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("User created a new account.");
-                return RedirectToAction("Index", "Tasks");
-            }
+                var result = await _userManager.CreateAsync(user, model.Password);
 
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-                _logger.LogInformation("Error creating user: " + error.Description);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation("User created a new account.");
+                    return RedirectToAction("Index", "Tasks");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                    _logger.LogInformation("Error creating user: " + error.Description);
+                }
             }
 
             return View(model);

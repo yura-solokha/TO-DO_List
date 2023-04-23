@@ -8,20 +8,20 @@ namespace DataAccessLayer.DataContext
 {
     public class TodoListContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
-        // public TodoListContext()
-        // {
-        // }
+        public TodoListContext()
+        {
+        }
         public TodoListContext(DbContextOptions<TodoListContext> options) : base(options)
         {
         }
-        
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-        //     if (!optionsBuilder.IsConfigured)
-        //     {
-        //         optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=_one_look1;database=todo_list;");
-        //     }
-        // }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=111;database=todo_list;");
+            }
+        }
 
 
         public DbSet<Task> Tasks { get; set; }
