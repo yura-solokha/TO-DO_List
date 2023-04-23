@@ -12,7 +12,7 @@ namespace TO_DO_List.Models.User
 
         [Required(ErrorMessage = "Введіть імʼя.")]
         [RegularExpression(@"^([A-Za-z]+ ?)+$",
-            ErrorMessage = "Імʼя повинно містити тільки літери латинського алфавіту.")]
+    ErrorMessage = "Імʼя повинно містити тільки літери латинського алфавіту.")]
         [StringLength(30, MinimumLength = 1)]
         public string FirstName { get; set; } = string.Empty;
 
@@ -31,7 +31,7 @@ namespace TO_DO_List.Models.User
 
         [Required(ErrorMessage = "Введіть підтвердження паролю.")]
         [DataType(DataType.Password)]
-        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{3,32}$",
+        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{3,32}$", 
             ErrorMessage = "Пароль має містити мінімум 3 символи.")]
         [Compare("Password", ErrorMessage = "Паролі не співпадають.")]
         [StringLength(32, MinimumLength = 3)]
