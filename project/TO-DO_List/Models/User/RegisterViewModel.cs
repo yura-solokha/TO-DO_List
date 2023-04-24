@@ -4,6 +4,8 @@ namespace TO_DO_List.Models.User
 {
     public class RegisterViewModel
     {
+        public string  Email { get; set; }
+
         [Required(ErrorMessage = "Введіть логін.")]
         [RegularExpression("^(?=.*[A-Za-z])(\\d*)[A-Za-z\\d]{3,32}$",
             ErrorMessage = "Логін має містити мінімум 3 символи.")]
