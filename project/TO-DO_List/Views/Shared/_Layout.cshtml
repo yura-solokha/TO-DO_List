@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - TO_DO_List</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="preload" href="/css/bear.css" as="style">
-    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" id="site-css"/>
+    <link rel="stylesheet" href="/css/site.css" type="text/css" id="theme"/>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
         <div class="container-fluid">
             <a class="navbar-brand mx-auto todo" id="todo" asp-area="" asp-controller="Tasks" asp-action="Index">TO-DO List</a>
-            <button type="button" class="btn btn-toolbar" id="toggleCSS">Змінити тему</button>
+            <button type="button" class="btn btn-toolbar" id="default">Класична тема</button>
+            <button type="button" class="btn btn-toolbar" id="bear">Тема ведмедик</button>
             <form asp-controller="User" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-toolbar">ВИХІД</button>
+                <button type="submit" class="btn btn-toolbar" id="exit">ВИХІД</button>
             </form>
         </div>
     </nav>
@@ -35,34 +35,41 @@
 </wrapper>
 
 <script>
-let savedTheme = localStorage.getItem("theme");
-    function toggleCss() {
-      let link = document.getElementById("site-css");
-      if (link.href.endsWith("site.css")) {
-        link.href = "/css/bear.css";
-        document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
-        localStorage.setItem("theme", "bear");
-        savedTheme = "bear";
-      } else {
-        link.href = "/css/site.css";
-        document.getElementById("todo").innerText = "TO-DO List";
-        localStorage.setItem("theme", "default");
-        savedTheme = "default";
-      }
+    const buttonDefault = document.getElementById("default");
+    const buttonBear = document.getElementById("bear");
+        
+    const defaultStyle= "/css/site.css";
+    const bearStyle = "/css/bear.css";
+        
+    const theme = document.getElementById("theme");
+    
+    function defaultFunction() {
+      theme.href = defaultStyle;
+      document.getElementById("todo").innerText = "TO-DO List";
+      document.getElementById("default").innerText = "Класична тема";
+      document.getElementById("bear").innerText = "Тема ведмедик";
+      window.localStorage.setItem('theme', 'default');
     }
-    document.getElementById("toggleCSS").addEventListener("click", toggleCss);
-    window.onload = function (){
-    if (savedTheme === "bear") {
-        document.getElementById("site-css").href = "/css/bear.css";
-        document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
+    
+    function bearFunction() {
+      theme.href = bearStyle;
+      document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
+      document.getElementById("default").innerText ="🖤";
+      document.getElementById("bear").innerText = "ʕ•́ᴥ•̀ʔっ";
+      window.localStorage.setItem('theme', 'bear');
+    }
+    
+    buttonDefault.addEventListener("click", defaultFunction);
+    buttonBear.addEventListener("click", bearFunction);
+    
+    const currentTheme = localStorage.getItem("theme");
+    
+    if (currentTheme === "bear") {
+      bearFunction();
     } else {
-        document.getElementById("site-css").href = "/css/site.css";
-    }
+      defaultFunction();
     }
 </script>
-
-
-
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
