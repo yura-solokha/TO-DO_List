@@ -31,8 +31,13 @@ namespace BusinessLogicLayer.Service.Impl
 
             string subject = "ToDoList Reset Password Verification";
             string body = File.ReadAllText("EmailTemplate/VerificationEmail.html");
+            
+            string localhost_port = Environment.GetEnvironmentVariable("ASPNETCORE_URLS")
+              ?.Split(';')
+              ?.Select(url => new Uri(url).Port.ToString())
+              ?.FirstOrDefault();
 
-            string appDomain = _config.GetSection("Emails:AppDomain").Value;
+            string appDomain = string.Format(_config.GetSection("Emails:AppDomain").Value, localhost_port);
             string confirmationLink = _config.GetSection("Emails:ForgotPassword").Value;
             string verificationURL = string.Format(appDomain + confirmationLink, user.Id, resetToken, newPassword);
 
