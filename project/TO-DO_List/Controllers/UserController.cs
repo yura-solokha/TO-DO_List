@@ -40,7 +40,8 @@ namespace TO_DO_List.Controllers
             {
                 UserName = model.Login,
                 FirstName = model.FirstName,
-                LastName = model.LastName
+                LastName = model.LastName,
+                Email = model.Email
             };
 
             if(model.Password == model.ConfirmPassword) {
@@ -104,7 +105,7 @@ namespace TO_DO_List.Controllers
             }
 
             var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
- 
+            
             await _emailService.SendEmail(user, resetToken, model.Password);
 
             return View(model);
@@ -119,7 +120,7 @@ namespace TO_DO_List.Controllers
 
             var user = await _userManager.FindByIdAsync(uid);
             await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
-            
+
             _logger.LogInformation("User updated an account with new password.");
             return RedirectToAction("Login", "User");
         }
