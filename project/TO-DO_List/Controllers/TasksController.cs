@@ -106,5 +106,14 @@ namespace TO_DO_List.Controllers
             _logger.LogInformation("Task was successfully marked.");
             return RedirectToAction("Index", "Tasks");
         }
+        
+        [HttpPost]
+        public IActionResult DeleteTask(int taskId)
+        {
+            _logger.LogInformation("Deleting task");
+            _taskService.Delete(taskId);
+            _logger.LogInformation("Task was successfully deleted.");
+            return RedirectToAction("Index", "Tasks");
+        }
     }
 }
