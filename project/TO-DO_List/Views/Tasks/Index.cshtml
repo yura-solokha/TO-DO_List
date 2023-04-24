@@ -64,9 +64,13 @@ else
                             }
                         </div>
                         <form asp-controller="Tasks" asp-action="MarkTask" method="post">
-                            <input type="hidden" name="taskId" value="@task.Id" />
-                            <input type="checkbox" name="isDone" class="is_done_checkbox" id="isTaskDone" checked="@task.IsDone" value="true" onchange="this.form.submit()" />
-                            <input type="hidden" name="isDone" value="false" />
+                            <input type="hidden" name="taskId" value="@task.Id"/>
+                            <input type="checkbox" name="isDone" class="is_done_checkbox" id="isTaskDone" checked="@task.IsDone" value="true" onchange="this.form.submit()"/>
+                            <input type="hidden" name="isDone" value="false"/>
+                        </form>
+                        <form asp-controller="Tasks" asp-action="DeleteTask" method="post">
+                            <input type="hidden" name="taskId" value="@task.Id"/>
+                            <button class="btn btn-toolbar">🗑️</button>
                         </form>
 
                     </div>
