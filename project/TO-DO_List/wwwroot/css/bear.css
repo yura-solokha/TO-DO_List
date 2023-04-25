@@ -356,7 +356,6 @@ body {
     cursor: pointer;
 }
 
-
 .subtasks-container {
     margin-top: 10px;
     display: none;
@@ -382,6 +381,12 @@ body {
 
 .subtask-name {
     margin: 0;
+}
+
+.subtask-description {
+    margin: 10px 0;
+    background: #9D8F8F;
+    color: #1A120B;
 }
 
 .reset_password_login_box {

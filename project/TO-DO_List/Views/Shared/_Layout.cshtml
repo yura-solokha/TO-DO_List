@@ -12,8 +12,8 @@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
         <div class="container-fluid">
             <a class="navbar-brand mx-auto todo" id="todo" asp-area="" asp-controller="Tasks" asp-action="Index">TO-DO List</a>
-            <button type="button" class="btn btn-toolbar" id="default">Класична тема</button>
-            <button type="button" class="btn btn-toolbar" id="bear">Тема ведмедик</button>
+            <button type="button" class="btn btn-toolbar" id="default">тема 1</button>
+            <button type="button" class="btn btn-toolbar" id="bear">тема 2</button>
             <form asp-controller="User" asp-action="Logout" method="post">
                 <button type="submit" class="btn btn-toolbar" id="exit">ВИХІД</button>
             </form>
@@ -46,8 +46,8 @@
     function defaultFunction() {
       theme.href = defaultStyle;
       document.getElementById("todo").innerText = "TO-DO List";
-      document.getElementById("default").innerText = "Класична тема";
-      document.getElementById("bear").innerText = "Тема ведмедик";
+      document.getElementById("default").innerText = "тема 1";
+      document.getElementById("bear").innerText = "тема 2";
       window.localStorage.setItem('theme', 'default');
     }
     

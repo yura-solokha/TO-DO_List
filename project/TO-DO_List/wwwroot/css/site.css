@@ -402,6 +402,12 @@ body {
     margin: 0;
 }
 
+.subtask-description {
+    margin: 10px 0;
+    background: black;
+    color: white;
+}
+
 .reset_password_login_box {
     background-color: ghostwhite;
     max-width: 500px;

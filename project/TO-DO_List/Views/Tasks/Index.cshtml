@@ -72,7 +72,6 @@ else
                             <input type="hidden" name="taskId" value="@task.Id"/>
                             <button class="btn btn-toolbar">🗑️</button>
                         </form>
-
                     </div>
                     <div class="task-body">
                         <p class="task-description">Опис: @task.Description</p>
@@ -87,7 +86,17 @@ else
                                 <div class="subtask-rectangle">
                                     <div class="subtask-header">
                                         <h4 class="subtask-name">@subtask.Name</h4>
+                                        <form asp-controller="Tasks" asp-action="MarkTask" method="post">
+                                            <input type="hidden" name="taskId" value="@subtask.Id"/>
+                                            <input type="checkbox" name="isDone" class="is_done_checkbox" id="isTaskDone" checked="@subtask.IsDone" value="true" onchange="this.form.submit()"/>
+                                            <input type="hidden" name="isDone" value="false"/>
+                                        </form>
+                                        <form asp-controller="Tasks" asp-action="DeleteTask" method="post">
+                                            <input type="hidden" name="taskId" value="@subtask.Id"/>
+                                            <button class="btn btn-toolbar">🗑️</button>
+                                        </form>
                                     </div>
+                                    <p class="subtask-description">Опис: @subtask.Description</p>
                                 </div>
                             </div>
                         }
@@ -102,15 +111,19 @@ else
 </form>
 
 <script>
-        // Find all "show-subtasks-button" elements and add a click event listener to each one
-        const showSubtasksButtons = document.querySelectorAll(".show-subtasks-button");
-        for (let i = 0; i < showSubtasksButtons.length; i++) {
-            showSubtasksButtons[i].addEventListener("click", function() {
-                // Find the nearest parent element with a "subtasks-container" class
-                const subtasksContainer = this.closest(".task-container").querySelector(".subtasks-container");
-                // Toggle the display of the subtasks container
-                subtasksContainer.style.display = (subtasksContainer.style.display === "none") ? "block" : "none";
-            });
-        }
-    </script>
+  // Find all "show-subtasks-button" elements and add a click event listener to each one
+  const showSubtasksButtons = document.querySelectorAll(".show-subtasks-button");
+  for (let i = 0; i < showSubtasksButtons.length; i++) {
+    showSubtasksButtons[i].addEventListener("click", function() {
+      const subtasksContainer = this.closest(".task-container").querySelector(".subtasks-container");
+      if (subtasksContainer.style.display === "none") {
+        subtasksContainer.style.display = "block";
+        this.innerText = "▼";
+      } else {
+        subtasksContainer.style.display = "none";
+        this.innerText = "▶";
+      }
+    });
+  }
+</script>
 </body>
