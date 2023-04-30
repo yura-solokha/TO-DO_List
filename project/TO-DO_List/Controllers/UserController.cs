@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Web;
 using BusinessLogicLayer.Service;
 using BusinessLogicLayer.Service.Impl;
 using DataAccessLayer.Model;
@@ -106,17 +107,15 @@ namespace TO_DO_List.Controllers
 
             var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
             
-            await _emailService.SendEmail(user, resetToken, model.Password);
+            await _emailService.SendResetPasswordEmail(user, resetToken, model.Password);
 
             return View(model);
         }
 
         [HttpGet("reset-password")]
-        public async Task<IActionResult> CompleteResetPassword()
+        public async Task<IActionResult> CompleteResetPassword(string uid, string token, string newPassword)
         {
-            string uid = HttpContext.Request.Query["uid"];
-            string resetToken = HttpContext.Request.Query["token"].ToString().Replace(' ', '+');
-            string newPassword = HttpContext.Request.Query["newPassword"];
+            string resetToken = HttpUtility.UrlDecode(token).Replace(' ', '+');
 
             var user = await _userManager.FindByIdAsync(uid);
             await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
