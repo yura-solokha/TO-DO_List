@@ -14,7 +14,7 @@ namespace TO_DO_List.Controllers
         private readonly ILogger<UserController> _logger;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private IEmailService _emailService;
+        private readonly IEmailService _emailService;
 
         public UserController(ILogger<UserController> logger,
             UserManager<User> userManager, SignInManager<User> signInManager, IEmailService emailService)

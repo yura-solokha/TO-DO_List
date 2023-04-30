@@ -2,45 +2,46 @@
 
 <h2>Реєстрація</h2>
 <form asp-controller="User" asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
     <div class="form-group">
         <div class="email_register_container">
             <h2 class="email_register_title">Пошта</h2>
-            <input asp-for="Email" class="email_form-control" placeholder="Введіть вашу пошту..." required />
+            <input asp-for="Email" class="email_form-control" placeholder="Введіть вашу пошту..." required/>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="login_register_container">
             <h2 class="login_register_title">Логін</h2>
-            <input asp-for="Login" class="login_form-control" placeholder="Введіть ваш логін..." required />
+            <input asp-for="Login" class="login_form-control" placeholder="Введіть ваш логін..." required/>
             <span asp-validation-for="Login" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="firstname_register_container">
             <h2 class="firstname_register_title">Ім'я</h2>
-            <input asp-for="FirstName" class="firstname_form-control" placeholder="Введіть ваше ім'я..." required />
+            <input asp-for="FirstName" class="firstname_form-control" placeholder="Введіть ваше ім'я..." required/>
             <span asp-validation-for="FirstName" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="lastname_register_container">
             <h2 class="lastname_register_title">Прізвище</h2>
-            <input asp-for="LastName" class="lastname_form-control" placeholder="Введіть ваше прізвище..." required />
+            <input asp-for="LastName" class="lastname_form-control" placeholder="Введіть ваше прізвище..." required/>
             <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="password_register_container">
             <h2 class="password_register_title">Пароль</h2>
-            <input asp-for="Password" type="password" class="password_form-control" placeholder="Введіть ваш пароль..." required />
+            <input asp-for="Password" type="password" class="password_form-control" placeholder="Введіть ваш пароль..." required/>
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="password_confirm_register_container">
             <h2 class="password_confirm_register_title">Підтвердіть пароль</h2>
-            <input asp-for="ConfirmPassword" type="password" class="confirm_password_form-control" placeholder="Підтвердіть ваш пароль..." required />
+            <input asp-for="ConfirmPassword" type="password" class="confirm_password_form-control" placeholder="Підтвердіть ваш пароль..." required/>
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
     </div>
