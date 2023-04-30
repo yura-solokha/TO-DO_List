@@ -33,7 +33,7 @@ namespace TO_DO_List.Controllers
         {
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser == null) return View();
-            _logger.LogInformation("View all tasks for user with id={}.", currentUser.Id);
+            _logger.LogInformation($"View all tasks for user with id={currentUser.Id}.");
             var tasks = _taskService.FindForUser(currentUser.Id);
             tasks = _taskService.FilterTasks(tasks, categoryId, isDone, priority);
 
@@ -103,10 +103,11 @@ namespace TO_DO_List.Controllers
             var task = _taskService.FindById(taskId);
             task.IsDone = isDone;
             _taskService.Update(task);
+            _taskService.MarkSubtasks(task);
             _logger.LogInformation("Task was successfully marked.");
             return RedirectToAction("Index", "Tasks");
         }
-        
+
         [HttpPost]
         public IActionResult DeleteTask(int taskId)
         {

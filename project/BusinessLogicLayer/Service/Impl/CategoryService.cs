@@ -23,13 +23,13 @@ public class CategoryService : ICategoryService
 
     public Category FindById(int id)
     {
-        _logger.LogInformation("Get category with id={}.", id);
+        _logger.LogInformation($"Get category with id={id}.");
         return _categoryRepository.GetById(id);
     }
 
     public void Delete(int id)
     {
-        _logger.LogInformation("Delete category with id={}.", id);
+        _logger.LogInformation($"Delete category with id={id}.");
         _categoryRepository.Delete(id);
     }
 }

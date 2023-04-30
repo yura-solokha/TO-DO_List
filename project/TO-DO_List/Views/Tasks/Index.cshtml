@@ -82,13 +82,13 @@ else
                     <div class="subtasks-container">
                         @foreach (var subtask in task.Subtasks)
                         {
-                            <div class="subtask-container">
+                            <div class="subtask-container keep">
                                 <div class="subtask-rectangle">
                                     <div class="subtask-header">
                                         <h4 class="subtask-name">@subtask.Name</h4>
                                         <form asp-controller="Tasks" asp-action="MarkTask" method="post">
                                             <input type="hidden" name="taskId" value="@subtask.Id"/>
-                                            <input type="checkbox" name="isDone" class="is_done_checkbox" id="isTaskDone" checked="@subtask.IsDone" value="true" onchange="this.form.submit()"/>
+                                            <input type="checkbox" name="isDone" class="is_done_checkbox_sub" id="isTaskDone" checked="@subtask.IsDone" value="true" onchange="this.form.submit()"/>
                                             <input type="hidden" name="isDone" value="false"/>
                                         </form>
                                         <form asp-controller="Tasks" asp-action="DeleteTask" method="post">
@@ -102,6 +102,11 @@ else
                         }
                     </div>
                 }
+                <form asp-controller="Tasks" asp-action="MarkTask" method="post" id="complete-task-form">
+                    <input type="hidden" name="taskId" value="@task.Id"/>
+                    <input type="hidden" name="isDone" value="true"/>
+                </form>
+
             </div>
         }
     }
@@ -109,6 +114,21 @@ else
 <form asp-controller="Tasks" asp-action="CreateTask" method="get">
     <button type="submit" class="btn btn-dark">Створити завдання</button>
 </form>
+<script>
+    // Find all checkboxes with the "is_done_checkbox" class and add a change event listener to each one
+    const checkboxes = document.querySelectorAll(".is_done_checkbox_sub");
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener("change", function() {
+            // Check if all checkboxes are checked
+            const allChecked = [...checkboxes].every(checkbox => checkbox.checked);
+            if (allChecked) {
+                // Submit the "complete-task-form" form
+                const form = document.getElementById("complete-task-form");
+                form.submit();
+            }
+        });
+    }
+</script>
 
 <script>
   // Find all "show-subtasks-button" elements and add a click event listener to each one

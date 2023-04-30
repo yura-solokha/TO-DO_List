@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.DataContext;
+using Microsoft.EntityFrameworkCore;
 using Task = DataAccessLayer.Model.Task;
 
 namespace DataAccessLayer.Repository.Impl;
@@ -34,7 +35,9 @@ public class TaskRepository : IEntityRepository<Task>, ITaskRepository
 
     public Task GetById(int id)
     {
-        return _context.Tasks.Find(id)!;
+        return _context.Tasks
+            .Include(t => t.Subtasks)
+            .SingleOrDefault(t => t.Id == id)!;
     }
 
     public IQueryable<Task> GetByUserId(int userId)

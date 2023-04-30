@@ -20,13 +20,13 @@ public class TaskService : ITaskService
 
     public void Create(Task task)
     {
-        _logger.LogInformation("Created task {}.", task);
+        _logger.LogInformation($"Created task {task}.");
         _taskEntityRepository.Create(task);
     }
 
     public void Update(Task task)
     {
-        _logger.LogInformation("Updated task {}.", task);
+        _logger.LogInformation($"Updated task {task}.");
         _taskRepository.Update(task);
     }
 
@@ -38,19 +38,19 @@ public class TaskService : ITaskService
 
     public Task FindById(int id)
     {
-        _logger.LogInformation("Get task by id={}.", id);
+        _logger.LogInformation($"Get task by id={id}.");
         return _taskEntityRepository.GetById(id);
     }
 
     public void Delete(int id)
     {
-        _logger.LogInformation("Delete task with id={}.", id);
+        _logger.LogInformation($"Delete task with id={id}.");
         _taskEntityRepository.Delete(id);
     }
 
     public List<Task> FindForUser(int userId)
     {
-        _logger.LogInformation("Get tasks for user with id={}.", userId);
+        _logger.LogInformation($"Get tasks for user with id={userId}.");
         return _taskRepository.GetByUserId(userId).ToList();
     }
 
@@ -90,5 +90,17 @@ public class TaskService : ITaskService
         }
 
         return tasks;
+    }
+
+    public void MarkSubtasks(Task task)
+    {
+        var subtasks = task.Subtasks;
+        if (subtasks == null || !subtasks.Any() || task.IsDone == false) return;
+        _logger.LogInformation($"Mark subtasks for task {task}.");
+        foreach (var subtask in subtasks)
+        {
+            subtask.IsDone = task.IsDone;
+            Update(subtask);
+        }
     }
 }

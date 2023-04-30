@@ -1,6 +1,7 @@
 using BusinessLogicLayer.Service.Impl;
 using DataAccessLayer.Model;
 using DataAccessLayer.Repository;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace UnitTests;
@@ -13,7 +14,8 @@ public class CategoryServiceTests
     public CategoryServiceTests()
     {
         _categoryRepositoryMock = new Mock<IEntityRepository<Category>>();
-        _categoryService = new CategoryService(_categoryRepositoryMock.Object);
+        var loggerMock = new Mock<ILogger<CategoryService>>();
+        _categoryService = new CategoryService(_categoryRepositoryMock.Object, loggerMock.Object);
     }
 
     [Fact]
@@ -44,7 +46,7 @@ public class CategoryServiceTests
     {
         const int categoryId = 1;
 
-        _categoryService.Remove(categoryId);
+        _categoryService.Delete(categoryId);
 
         _categoryRepositoryMock.Verify(repo => repo.Delete(categoryId), Times.Once());
     }

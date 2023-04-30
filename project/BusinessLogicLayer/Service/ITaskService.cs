@@ -18,4 +18,6 @@ public interface ITaskService
     List<Task> FindForUser(int userId);
 
     List<Task> FilterTasks(List<Task> tasks, int? categoryId, bool? isDone, int? priority);
+    
+    void MarkSubtasks(Task task);
 }
