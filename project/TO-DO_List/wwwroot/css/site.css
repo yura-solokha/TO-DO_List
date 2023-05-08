@@ -252,6 +252,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .email_form-control {
@@ -259,6 +260,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .firstname_form-control {
@@ -266,6 +268,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .lastname_form-control {
@@ -273,6 +276,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .password_form-control {
@@ -280,6 +284,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .confirm_password_form-control {
@@ -287,6 +292,12 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
+}
+.text-danger {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 4px
 }
 
 .page_register_button {
