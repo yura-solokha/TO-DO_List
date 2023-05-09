@@ -18,6 +18,7 @@ builder.Services.AddScoped<IEntityRepository<Task>, TaskRepository>();
 builder.Services.AddScoped<IEntityRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 builder.Services.AddDbContext<TodoListContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")!

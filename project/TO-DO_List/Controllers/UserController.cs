@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Web;
 using BusinessLogicLayer.Service;
-using BusinessLogicLayer.Service.Impl;
 using DataAccessLayer.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,17 +12,14 @@ namespace TO_DO_List.Controllers
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
-        private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IEmailService _emailService;
+        private readonly IAccountService _accountService;
 
-        public UserController(ILogger<UserController> logger,
-            UserManager<User> userManager, SignInManager<User> signInManager, IEmailService emailService)
+        public UserController(ILogger<UserController> logger, SignInManager<User> signInManager, IAccountService accountService)
         {
             _logger = logger;
-            _userManager = userManager;
             _signInManager = signInManager;
-            _emailService = emailService;
+            _accountService = accountService;
         }
 
         [HttpGet]
@@ -37,31 +33,18 @@ namespace TO_DO_List.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            var user = new User
+            var resultUser = await _accountService.CreateUserAsync(model.Login, model.FirstName, model.LastName,
+                model.Email, model.Password, model.ConfirmPassword);
+
+            if (resultUser == null)
             {
-                UserName = model.Login,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email
-            };
-
-            if(model.Password == model.ConfirmPassword) {
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    _logger.LogInformation("User created a new account.");
-                    return RedirectToAction("Index", "Tasks");
-                }
-
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                    _logger.LogInformation("Error creating user: " + error.Description);
-                }
+                ModelState.AddModelError("", "Логін уже зайнято. Або невірно введено пароль/його підтвердження.");
+                return View(model);
             }
-            
-            return View(model);
+            _logger.LogInformation("User created a new account.");
+
+            await _signInManager.SignInAsync(resultUser, isPersistent: false);
+            return RedirectToAction("Index", "Tasks");
         }
 
         [HttpGet]
@@ -73,14 +56,9 @@ namespace TO_DO_List.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserViewModel model)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, model.RememberMe,
-                lockoutOnFailure: false);
+            var result = await _accountService.SignInAsync(model.Login, model.Password, model.RememberMe);
 
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("User logged in.");
-                return RedirectToAction("Index", "Tasks");
-            }
+            if (result.Succeeded) return RedirectToAction("Index", "Tasks");
 
             ModelState.AddModelError("", "Неправильний логін або пароль");
             return View(model);
@@ -97,28 +75,19 @@ namespace TO_DO_List.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            var user = await _userManager.FindByNameAsync(model.Login);
+            var result = await _accountService.ResetPasswordAsync(model.Login, model.Password);
 
-            if (user == null)
-            {
-                ModelState.AddModelError("", "Невірно введені дані.");
-                return View(model);
-            }
-
-            var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
-            
-            await _emailService.SendResetPasswordEmail(user, resetToken, model.Password);
-
+            if (result.Succeeded) return View(model);
+            ModelState.AddModelError("", "Невірно введені дані.");
             return View(model);
         }
 
         [HttpGet("reset-password")]
         public async Task<IActionResult> CompleteResetPassword(string uid, string token, string newPassword)
         {
-            string resetToken = HttpUtility.UrlDecode(token).Replace(' ', '+');
+            var resetToken = HttpUtility.UrlDecode(token).Replace(' ', '+');
 
-            var user = await _userManager.FindByIdAsync(uid);
-            await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
+            await _accountService.CompleteResetPasswordAsync(uid, resetToken, newPassword);
 
             _logger.LogInformation("User updated an account with new password.");
             return RedirectToAction("Login", "User");
@@ -127,8 +96,7 @@ namespace TO_DO_List.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("User logout.");
+            await _accountService.SignOut();
             return RedirectToAction("Login", "User");
         }
 
