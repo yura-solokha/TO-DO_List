@@ -37,7 +37,11 @@
     </div>
 </form>
 <body class="task-body">
-
+<form asp-controller="Tasks" asp-action="CreateTask" method="get">
+    <div class="d-flex justify-content-end my-3">
+        <button type="submit" class="btn btn-lg create-button">Створити завдання</button>
+    </div>
+</form>
 @if (!Model.Any())
 {
     <p>Ще немає завдань.</p>
@@ -111,9 +115,7 @@ else
         }
     }
 }
-<form asp-controller="Tasks" asp-action="CreateTask" method="get">
-    <button type="submit" class="btn btn-dark">Створити завдання</button>
-</form>
+
 <script>
     // Find all checkboxes with the "is_done_checkbox" class and add a change event listener to each one
     const checkboxes = document.querySelectorAll(".is_done_checkbox_sub");

@@ -527,6 +527,11 @@ body {
     color: white;
 }
 
+.create-button{
+    color: #f8f9fa;
+    background-color: #443C3C;
+}
+
 .nav-content {
     display: flex;
     justify-content: space-between;

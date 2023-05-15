@@ -532,6 +532,10 @@ body {
 .btn-toolbar{
     color:white;
 }
+.create-button{
+    background-color: black;
+    color: white;
+}
 
 .nav-content {
     display: flex;
