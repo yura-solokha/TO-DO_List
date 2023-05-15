@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
             <div class="container-fluid nav-content">
                 <a class="navbar-brand mx-auto todo" id="todo" asp-area="" asp-controller="Tasks" asp-action="Index">TO-DO List</a>
                 <div class="Theme_btns">
@@ -56,7 +56,7 @@
     
     function bearFunction() {
       theme.href = bearStyle;
-      document.getElementById("todo").innerText += " ʕ ᵔᴥᵔ ʔ";
+      document.getElementById("todo").innerText = "TO-DO List ʕ ᵔᴥᵔ ʔ";
       document.getElementById("default").innerText ="🖤";
       document.getElementById("bear").innerText = "ʕ•́ᴥ•̀ʔっ";
       window.localStorage.setItem('theme', 'bear');

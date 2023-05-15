@@ -53,11 +53,18 @@ body {
     margin-top: 3px;
     margin-bottom: 18px;
     border: 0;
+    width: 393px;
 }
 
 .login_input::placeholder {
     color: #1A120B;
     opacity: 0.5;
+}
+
+.login_input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .password {
@@ -77,17 +84,29 @@ body {
     min-width: 406px;
 }
 
+.password_box:hover {
+    border-color: black;
+    border-width: 5px;
+}
+
 .password_input {
     background: transparent;
     margin-left: 11px;
     margin-top: 3px;
     margin-bottom: 18px;
+    width: 393px;
     border: 0;
 }
 
 .password_input::placeholder {
     color: #1A120B;
     opacity: 0.5;
+}
+
+.password_input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .login_button {
@@ -103,6 +122,16 @@ body {
 .forgot_password_button {
     background: #F5EBEB;
     border-radius: 30px;
+    font-size: 20px;
+    padding: 14px;
+    margin-top: 13px;
+    margin-left: 98px;
+    border-color: transparent;
+}
+
+.registration_password_button {
+    background: #E4D0D0;
+    color: #1A120B;
     margin-left: 205px;
     font-size: 20px;
     border-color: transparent;
@@ -110,17 +139,7 @@ body {
     position: absolute;
     width: fit-content;
     margin-top: -61px;
-}
-
-.registration_password_button {
-    background: #E4D0D0;
-    color: #1A120B;
-    font-size: 20px;
     border-radius: 30px;
-    padding: 14px;
-    margin-top: 13px;
-    margin-left: 98px;
-    border-color: transparent;
 }
 
 .login_button:hover {
@@ -140,29 +159,29 @@ body {
 .forgot_password_button:hover {
     background: #E4D0D0;
     border-radius: 30px;
-    margin-left: 205px;
-    font-size: 20px;
-    padding: 14px;
-    border-color: black;
-    color: white;
-    border-width: 3px;
-    filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
-    position: absolute;
-    width: fit-content;
-    margin-top: -61px;
-}
-
-.registration_password_button:hover {
-    background: #E4D0D0;
-    color: #1A120B;
     font-size: 20px;
     border-radius: 30px;
     padding: 14px;
     margin-top: 13px;
     margin-left: 98px;
     border-color: black;
+    color: white;
     border-width: 3px;
     filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
+}
+
+.registration_password_button:hover {
+    background: #E4D0D0;
+    color: #1A120B;
+    margin-left: 205px;
+    font-size: 20px;
+    padding: 14px;
+    border-color: black;
+    border-width: 3px;
+    filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
+    position: absolute;
+    width: fit-content;
+    margin-top: -61px;
 }
 
 .login_register_title {
@@ -196,6 +215,15 @@ body {
     max-width: 500px;
     min-width: 300px;
     padding: 15px;
+}
+
+.email_register_container {
+    background-color: white;
+    border-radius: 30px;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
 
 .firstname_register_container {
@@ -239,6 +267,15 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
+}
+
+.email_form-control {
+    padding-top: 4px;
+    border-color: transparent;
+    color: grey;
+    font-size: 22px;
+    width: 466px;
 }
 
 .firstname_form-control {
@@ -246,6 +283,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .lastname_form-control {
@@ -253,6 +291,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .password_form-control {
@@ -260,6 +299,7 @@ body {
     border-color: transparent;
     color: grey;
     font-size: 22px;
+    width: 466px;
 }
 
 .confirm_password_form-control {
@@ -267,6 +307,13 @@ body {
     border-color: transparent;
     color: #D5B4B4;
     font-size: 22px;
+    width: 466px;
+}
+
+.text-danger {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 4px
 }
 
 .page_register_button {
@@ -359,10 +406,12 @@ body {
 .subtasks-container {
     margin-top: 10px;
     display: none;
+    padding-left: 3%;
 }
 
 .subtask-container {
     margin: 10px 0;
+    padding-left: 3%;
 }
 
 .subtask-rectangle {
@@ -472,4 +521,27 @@ body {
     display: flex;
     justify-content: space-between;
     color: #867070;
+}
+
+.btn-toolbar {
+    color: white;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    margin: 0 auto;
+}
+
+.Theme_btns {
+    display: flex;
+    align-items: center;
+}
+
+.login_lable {
+    margin-bottom: -50px;
 }
