@@ -56,6 +56,7 @@ body {
     margin-top: 3px;
     margin-bottom: 18px;
     border: 0;
+    width:393px;
 }
 
     .login_input::placeholder {
@@ -63,7 +64,13 @@ body {
         opacity: 0.5;
     }
 
-.password {
+    .login_input:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .password {
     font-size: 27px;
     font-weight: 500;
     padding-left: 13px;
@@ -80,18 +87,30 @@ body {
     min-width: 406px;
 }
 
-.password_input {
-    background: transparent;
-    margin-left: 11px;
-    margin-top: 3px;
-    margin-bottom: 18px;
-    border: 0;
-}
+    .password_box:hover{
+        border-color:black;
+        border-width:5px;
+    }
+
+    .password_input {
+        background: transparent;
+        margin-left: 11px;
+        margin-top: 3px;
+        margin-bottom: 18px;
+        width: 393px;
+        border: 0;
+    }
 
     .password_input::placeholder {
         color: black;
         opacity: 0.5;
     }
+
+        .password_input:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
 
 .login_button {
     margin-top: 83px;
@@ -106,6 +125,19 @@ body {
 .forgot_password_button {
     background: LightCoral;
     border-radius: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 13px;
+    margin-left: 98px;
+    border-color: transparent;
+}
+
+
+
+.registration_password_button {
+    background: deepskyblue;
+    color: black;
     margin-left: 205px;
     font-size: 20px;
     border-color: transparent;
@@ -113,17 +145,7 @@ body {
     position: absolute;
     width: fit-content;
     margin-top: -61px;
-}
-
-.registration_password_button {
-    background: deepskyblue;
-    color: black;
-    font-size: 20px;
-    border-radius: 30px;
-    padding: 14px;
-    margin-top: 13px;
-    margin-left: 98px;
-    border-color: transparent;
+    border-radius:30px;
 }
 
 .login_button:hover {
@@ -143,6 +165,22 @@ body {
 .forgot_password_button:hover {
     background: LightCoral;
     border-radius: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 13px;
+    margin-left: 98px;
+    border-color: black;
+    color: white;
+    border-width: 3px;
+    filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
+}
+
+
+
+.registration_password_button:hover {
+    background: deepskyblue;
+    color: black;
     margin-left: 205px;
     font-size: 20px;
     padding: 14px;
@@ -153,20 +191,6 @@ body {
     position: absolute;
     width: fit-content;
     margin-top: -61px;
-}
-
-.registration_password_button:hover {
-    background: deepskyblue;
-    color: black;
-    font-size: 20px;
-    border-radius: 30px;
-    padding: 14px;
-    margin-top: 13px;
-    margin-left: 98px;
-    border-color: black;
-    color: white;
-    border-width: 3px;
-    filter: drop-shadow(11px 7px 8px rgba(0, 0, 0, .25));
 }
 
 .login_register_title {
@@ -389,10 +413,12 @@ body {
 .subtasks-container {
     margin-top: 10px;
     display: none;
+    padding-left: 3%; 
 }
 
 .subtask-container {
     margin: 10px 0;
+    padding-left: 3%;
 }
 
 .subtask-rectangle {
@@ -501,4 +527,26 @@ body {
 .filter_select {
     display: flex;
     justify-content: space-between;
+}
+
+.btn-toolbar{
+    color:white;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    margin: 0 auto;
+}
+
+.Theme_btns {
+    display: flex;
+    align-items: center;
+}
+.login_lable {
+    margin-bottom: -50px;
 }
