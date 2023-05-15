@@ -1,38 +1,64 @@
 ﻿<!DOCTYPE html>
 @model TO_DO_List.Models.User.LoginUserViewModel
 
-<h2>Вхід</h2>
+<h2 class="login_lable">Вхід</h2>
 
 
 <body>
-<form asp-controller="User" asp-action="Login" method="post">
-    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-    <div class="login_box">
-        <div>
-            <label class="username" asp-for="Login">Ім'я користувача:</label>
+    <form asp-controller="User" asp-action="Login" method="post">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <div id="login_box" class="login_box">
+            <div>
+                <label class="username" asp-for="Login">Ім'я користувача:</label>
+            </div>
+            <div>
+                <input id="login_input" class="login_input" asp-for="Login" placeholder="Введіть ваше ім'я..." required />
+                <span asp-validation-for="Login" class="text-danger"></span>
+            </div>
         </div>
-        <div>
-            <input class="login_input" asp-for="Login" placeholder="Введіть ваше ім'я..." required/>
-            <span asp-validation-for="Login" class="text-danger"></span>
+        <div id="password_box" class="password_box">
+            <div>
+                <label class="password" asp-for="Password">Пароль:</label>
+            </div>
+            <div>
+                <input id="password_input" class="password_input" asp-for="Password" placeholder="Введіть ваш пароль..." required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
         </div>
-    </div>
-    <div class="password_box">
-        <div>
-            <label class="password" asp-for="Password">Пароль:</label>
-        </div>
-        <div>
-            <input class="password_input" asp-for="Password" placeholder="Введіть ваш пароль..." required/>
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-    </div>
-    <button class="login_button" type="submit">Увійти в систему</button>
-</form>
-<form asp-controller="User" asp-action="ResetPassword" method="get">
-    <button class="forgot_password_button" type="submit">Відновити пароль</button>
-</form>
-<form asp-controller="User" asp-action="Register" method="get">
-    <button class="registration_password_button" type="submit">Зареєструватись</button>
-</form>
+
+        <script>
+            var loginInput = document.getElementById('login_input');
+            var loginBox = document.getElementById('login_box');
+            var passwordInput = document.getElementById('password_input');
+            var passwordBox = document.getElementById('password_box');
+
+            loginInput.addEventListener('focus', function () {
+                loginBox.style.border = '3px solid black';
+            });
+
+            loginInput.addEventListener('blur', function () {
+                loginBox.style.border = 'none';
+            });
+
+            passwordInput.addEventListener('focus', function () {
+                passwordBox.style.border = '3px solid black';
+            });
+
+            passwordInput.addEventListener('blur', function () {
+                passwordBox.style.border = 'none';
+            });
+        </script>
+
+
+        <button class="login_button" type="submit">Увійти в систему</button>
+    </form>
+    <form asp-controller="User" asp-action="Register" method="get">
+        <button class="registration_password_button" type="submit">Зареєструватись</button>
+    </form>
+    <form asp-controller="User" asp-action="ResetPassword" method="get">
+        <button class="forgot_password_button" type="submit">Відновити пароль</button>
+    </form>
+
 
 
 </body>
