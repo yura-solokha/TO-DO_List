@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<TO_DO_List.Models.Tasks.TaskViewModel>
 
 <form asp-controller="Tasks" asp-action="Index" method="get" class="form-inline">
-    <div class="form-row align-items-center filter_select">
-        <div class="col-sm-3 my-1">
+    <div class="form-row align-items-center filter_select flex-wrap">
+        <div class="col-lg-3 col-12 my-1">
             <label for="category" class="sr-only">Категорія:</label>
             <select name="categoryId" id="category" class="form-control">
                 <option value="">Всі</option>
@@ -13,7 +13,7 @@
             </select>
         </div>
 
-        <div class="col-sm-3 my-1">
+        <div class="col-lg-3 col-12 my-1">
             <label for="isDone" class="sr-only">Виконано:</label>
             <select name="isDone" id="isDone" class="form-control">
                 <option value="">Всі</option>
@@ -22,7 +22,7 @@
             </select>
         </div>
 
-        <div class="col-sm-3 my-1">
+        <div class="col-lg-3 col-12 my-1">
             <label for="priority" class="mr-2">Пріоритет:</label>
             <select name="priority" id="priority" class="form-control">
                 <option value="">Всі</option>
@@ -31,7 +31,7 @@
             </select>
         </div>
 
-        <div class="col-auto my-1">
+        <div class="col-lg-auto col-12 my-1">
             <button type="submit" class="btn btn-secondary">Фільтрувати</button>
         </div>
     </div>
